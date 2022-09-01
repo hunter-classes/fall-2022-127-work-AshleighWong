@@ -1,5 +1,11 @@
 import turtle 
 
+def sample_function():
+  print("this is a function")
+  print("it can be used multiple times")
+
+
+
 wn = turtle.Screen()
 crush = turtle.Turtle()
 
