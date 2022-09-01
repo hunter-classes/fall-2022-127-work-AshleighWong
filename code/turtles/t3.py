@@ -27,6 +27,8 @@ squirt = turtle.Turtle()
 squirt.up()
 squirt.goto(100,100)
 squirt.down()
+squirt.color("red") #makes turtle red
+squirt.width(5) # makes the line width thicker
 
 squirt.forward(50)
 squirt.right(120)
