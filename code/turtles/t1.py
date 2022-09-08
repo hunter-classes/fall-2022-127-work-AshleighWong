@@ -13,18 +13,28 @@ def square(t,x,y,w,color,sidelen):
     t.right(90)
 
 
+def triangle(fill in these):
+  
+
+#def hexagon()
+
+#def ngon(t,numsides,x,y,color,width,sidelen):
+  #code to draw the ngon
+
+
+
+
+
 wn = turtle.Screen()
 crush = turtle.Turtle()
 square(crush,0,0,1,"green", 50 )
 
 
 squirt = turtle.Turtle()
-squirt.up()
-squirt.goto(100,100)
-squirt.down()
-squirt.color("red")
-squirt.width(5)
-square(squirt)
+square(squirt,100,100,5,"red",80)
+square(crush,-100,100,10,"blue", 90)
+crush.setheading(45)
+square(crush,150,30,2,"yellow",60)
 
 
 wn.exitonclick()
