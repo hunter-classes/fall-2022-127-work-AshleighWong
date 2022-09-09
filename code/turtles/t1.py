@@ -1,7 +1,7 @@
 import turtle 
 
 def square(t,x,y,w,color,sidelen): 
-  #set the location. color, and width 
+  #set the turtle, location, width, color, and length of each side) 
   t.up()
   t.goto(x,y)
   t.width(w)
@@ -13,7 +13,12 @@ def square(t,x,y,w,color,sidelen):
     t.right(90)
 
 
-def triangle(fill in these):
+def triangle(t,x,y,w,sidelen):
+bart = turtle.Turtle()
+  triangle(bart,)
+
+
+  
   
 
 #def hexagon()
