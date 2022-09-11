@@ -12,24 +12,6 @@ def square(t,x,y,w,color,sidelen):
     t.forward(sidelen)
     t.right(90)
 
-
-def triangle(t,x,y,w,sidelen):
-bart = turtle.Turtle()
-  triangle(bart,)
-
-
-  
-  
-
-#def hexagon()
-
-#def ngon(t,numsides,x,y,color,width,sidelen):
-  #code to draw the ngon
-
-
-
-
-
 wn = turtle.Screen()
 crush = turtle.Turtle()
 square(crush,0,0,1,"green", 50 )
@@ -40,6 +22,11 @@ square(squirt,100,100,5,"red",80)
 square(crush,-100,100,10,"blue", 90)
 crush.setheading(45)
 square(crush,150,30,2,"yellow",60)
+
+#def triangle(t,x,y,w,sidelen):
+#bart = turtle.Turtle()
+  #triangle(bart,
+
 
 
 wn.exitonclick()
