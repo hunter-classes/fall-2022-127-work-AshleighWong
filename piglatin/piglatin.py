@@ -1,19 +1,3 @@
-def initialize(name):
-  result = first = name[0]
-#isolate, uppercase and add first init to result
-  first = first.upper()
-  result = result + first +"."
-#find the last name (after space), cap it and add to the result
-  location = name.find(" ")
-  last = name[location+1:].capitalize()
-  result = result + " " + last
-  return result
-
-print(initialize(input("type first and last name")))
-
-# Test initialize
-result = initialize("james bond")
-print("james bond --> ",result)
 
 """
 input: a string in the form "first last"
