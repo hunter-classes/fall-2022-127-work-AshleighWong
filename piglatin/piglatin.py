@@ -5,18 +5,12 @@ returns: a string in the form "Last, First Last"
 """
 #bondify
 def bondify(name):
-   result = first = name[location:].capitalize()
-#isolate, uppercase and add first init to result
-  first = first.upper()
-  
-location = name.find(" ")
+  location = name.find(" ")
+  result = name[0:location]
   last = name[location+1:].capitalize()
-  result = result + " " + last
+  result = last + "," + result + " " + last
   return result
-
-  print(result) 
-print(bondify(input("type first and last name")))
-  
+  print(result)
 
 """
 input: a string representing a word
