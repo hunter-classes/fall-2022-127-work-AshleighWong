@@ -35,11 +35,31 @@ def vowel_checker(letter):
     return False
 
 #piglatin function 
+
 def piglatin(word):
   if vowel_checker(word[0]) == True:
     print(word + "yay")
   else:
     #need to find length of word
-    print(word[1:(len(word))] + word[:1] + "ay")
+    print(word[1:] + word[:1] + "ay")
 
 piglatin(input("type in a word you want in piglatin! "))
+
+#piglatin in class
+def piglatinfy(word):
+  first = word[0]
+  if first == 'aeiou':
+    result = word + 'ay'
+  else:
+    result = word[1:] + word[:1] + 'ay'
+  #if
+  #transform for the first letter consonant
+  #else
+  #or
+  #transform for first letter vowel
+  return result
+
+#testing piglatinfy
+test_word = "hello"
+result = piglatinfy(test_word)
+print(test_word, " -->", result)
