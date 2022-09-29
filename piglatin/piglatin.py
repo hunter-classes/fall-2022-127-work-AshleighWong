@@ -45,13 +45,23 @@ def piglatin(word):
 
 piglatin(input("type in a word you want in piglatin! "))
 
+
 #piglatin in class
+#TODO
+#make it work for capital letters
+#ex Cable --> Ablecay
+#make it work for punctuation 
+#ex cable. --> Ablecay.
+
 def piglatinfy(word):
   first = word[0]
-  if first == 'aeiou':
-    result = word + 'ay'
+  punctuation = '!'or '?'or '.'
+  if first == 'AEIOUaeiou':
+    first == word[0].upper()
+    result = word[1:len(word-1)] + 'ay' + punctuation
   else:
-    result = word[1:] + word[:1] + 'ay'
+    first==word[1].upper
+    result = word[1:len(word-1)] + word[:1] + 'ay' + punctuation 
   #if
   #transform for the first letter consonant
   #else
@@ -63,3 +73,20 @@ def piglatinfy(word):
 test_word = "hello"
 result = piglatinfy(test_word)
 print(test_word, " -->", result)
+
+test_word = "Cable"
+result = piglatinfy(test_word)
+print(test_word, " -->", result)
+
+test_word = "cable."
+result = piglatinfy(test_word)
+print(test_word, " -->", result)
+
+test_word = "hello!"
+result = piglatinfy(test_word)
+print(test_word, " -->", result)
+
+test_word = "hello."
+result = piglatinfy(test_word)
+print(test_word, " -->", result)
+
