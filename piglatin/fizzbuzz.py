@@ -11,3 +11,30 @@ while num <=100:
     print("fizz")
   elif num % 5 == 0:
     print("buzz")
+
+
+def fizzbuzz(n):
+  number = 1
+  while number < n: #while loop
+    print(number)
+    number = number +1
+  pass
+
+
+#for number in range(1,n) <---- this way also works(for loop)
+  #print(number)
+
+def fizzbuzz2(n):
+  for number in range(1,n):
+    output = " "
+  if num % 3 == 0:
+    output = output +"fizz"
+  if num % 5 == 0:
+    output = output + "buzz"
+  if output == " ":
+    output = str(number)
+  print(output)
+  
+value=20
+print("Fizzbuzz up to" , value)
+fizzbuzz(20)

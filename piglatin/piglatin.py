@@ -90,3 +90,15 @@ test_word = "hello."
 result = piglatinfy(test_word)
 print(test_word, " -->", result)
 
+
+def piglatin2(word):
+  first = word[0]
+  if first in 'aeiouAEIOU':
+    result = word +'ay'
+  else:
+    if first == first.upper():
+      result = word[1:].capitalize() + first.lower() + 'ay'
+    else:
+      result = word[1:] + first + 'ay'
+
+return result
