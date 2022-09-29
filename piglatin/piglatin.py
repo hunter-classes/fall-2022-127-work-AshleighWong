@@ -57,10 +57,10 @@ def piglatinfy(word):
   first = word[0]
   punctuation = '!'or '?'or '.'
   if first == 'AEIOUaeiou':
-    first == word[0].upper()
-    result = word[1:len(word-1)] + 'ay' + punctuation
+    first == first.upper()
+    result = word[1:].capitalize+ 'ay' + punctuation
   else:
-    first==word[1].upper
+    first== word[1].upper
     result = word[1:len(word-1)] + word[:1] + 'ay' + punctuation 
   #if
   #transform for the first letter consonant
@@ -91,7 +91,7 @@ result = piglatinfy(test_word)
 print(test_word, " -->", result)
 
 
-def piglatin2(word):
+def piglatin2(word): #capital letters
   first = word[0]
   if first in 'aeiouAEIOU':
     result = word +'ay'
@@ -101,4 +101,27 @@ def piglatin2(word):
     else:
       result = word[1:] + first + 'ay'
 
-return result
+  return result 
+
+
+
+
+def piglatin3(word): #punctuation
+  first = word[0]
+  if first == first.upper():
+    capital = True
+  else:
+    capital = False
+
+    word = word.lower()
+    first = word[0]
+
+    if first in 'aeiou':
+      result = word +'ay'
+    else:
+      result = word[1:] + first +'ay'
+
+      if capital ==True:
+        result = result.capital()
+        
+  return result
