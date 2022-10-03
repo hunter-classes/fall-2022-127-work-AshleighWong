@@ -92,6 +92,13 @@ print(test_word, " -->", result)
 
 
 def piglatin2(word): #capital letters
+  if word[-1] in '.!?':
+    end_of-sentence = True
+    punctuation = word[-1]
+    word =word[::1] # everything but the last letter
+  else:
+    end_of_sentence = False
+
   first = word[0]
   if first in 'aeiouAEIOU':
     result = word +'ay'
@@ -104,9 +111,7 @@ def piglatin2(word): #capital letters
   return result 
 
 
-
-
-def piglatin3(word): #punctuation
+def piglatin3(word): #capital and lowercase
   first = word[0]
   if first == first.upper():
     capital = True
@@ -121,7 +126,10 @@ def piglatin3(word): #punctuation
     else:
       result = word[1:] + first +'ay'
 
-      if capital ==True:
-        result = result.capital()
+      if capital == True:
+        result = result.capitalize()
         
   return result
+
+def piglatinfy1(word): # puncuation
+  
