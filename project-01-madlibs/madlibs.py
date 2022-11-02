@@ -12,11 +12,11 @@ f = open("madlibs.txt", "r") # madlibs.txt = locaton of the file. Opens file and
 content = f.read() 
 content_words = content.split() #seperates charcters with white spaces between them
 
-adj_list = ['stinky' , 'ugly', 'wild', 'moldy', 'violent', 'angry', 'sick', 'filthy'] #adjective list
+adj_list = ['stinky' , 'ugly', 'wild', 'moldy', 'violent', 'evil', 'sick', 'filthy'] #adjective list
 
-verb_list = ['stab', 'fear', 'kick', 'melt', 'fight', 'harass', 'explode', 'hit']
+verb_list = ['stab', 'fear', 'kick', 'melt', 'fight', 'snore', 'explode', 'laugh']
 
-noun_list = ['toes', 'idiot', 'dog','cat','bathroom','butt','cockroach','failure']
+noun_list = ['toes', 'waste', 'dog','cat','bathroom','butt','cockroach','failure']
 
 hero_list = ['Kenzie', 'Chelsea', 'Jasmine']
 
@@ -49,11 +49,10 @@ def change_hero():
 
 
 change_verb() #calling all the functions in the end 
-change_noun() # calling all functions at the end will make it print whatever is returned
+change_noun() # calling all functions at the end will make it print whatever is returned --> " ".join(content_words)
 change_adjective()
 change_hero()
 
 print(" ".join(content_words))# It will not print original paragraph but the modified ones. Removes the list aspect and creates spaces between 
-"........."
 
 print("based on a true story.")
