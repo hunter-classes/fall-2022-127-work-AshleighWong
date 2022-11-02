@@ -1,3 +1,6 @@
+"""These are the extras I completed:
+1. Importing the 
+"""
 import random 
 
 #open, read, and write file
@@ -11,12 +14,39 @@ verb_list = ['stab', 'fear', 'cook', 'swat', 'fight', 'harass', 'explode', 'hit'
 
 noun_list = ['toes', 'idiot', 'dog','cat','bathroom','butt','cockroach','poo']
 
-heros_list = ['Kenzie', 'Chelsea', 'Jasmine']
+hero_list = ['Kenzie', 'Chelsea', 'Jasmine']
 
+#create function to locate and change adjectives
 def change_adjective():
     for i in range(len(content_words)): #getting length of the content words(the text file) and setting it to the range of the for loop.
-      if content_words[i] == '<ADJECTIVE>':# content_words[i] means the element at index 'i' of list. 'i' is the variable created for the loop
+      if content_words[i] == '<ADJECTIVE>':# content_words[i] means the element at index 'i' of list. Finds location where string word in split file = <ADJECTIVE>
         content_words[i] = random.choice(adj_list) #replaces the index position when the statement above is True with random element from adj_list. 
-    return content_words
+    return " ".join(content_words)
 
-print(change_adjective())
+#create function to locate and change nouns. Same concept as the change_adjective function above
+def change_noun():
+    for i in range(len(content_words)):
+      if content_words[i] == '<NOUN>':
+        content_words[i] = random.choice(noun_list)
+    return " ".join(content_words)
+
+#create function to locate and change verbs. Same concept
+def change_verb():
+    for i in range(len(content_words)):
+      if content_words[i] == '<VERB>':
+        content_words[i] = random.choice(verb_list)
+    return " ".join(content_words)
+
+def change_hero():
+    for i in range(len(content_words)):
+      if content_words[i] == '<HERO>':
+        content_words[i] = random.choice(hero_list)
+    return " ".join(content_words)
+
+
+change_verb() #calling all the functions in the end 
+change_noun() # calling all functions at the end will make it print whatever is returned
+change_adjective()
+change_hero()
+
+print(" ".join(content_words))# It will not print original paragraph but the modified ones. Removes the list aspect and creates spaces between 
