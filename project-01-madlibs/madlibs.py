@@ -1,6 +1,10 @@
 """These are the extras I completed:
-1. Importing the 
+1. Imported the file from another text file
+2.
+3.
+
 """
+
 import random 
 
 #open, read, and write file
@@ -10,9 +14,9 @@ content_words = content.split() #seperates charcters with white spaces between t
 
 adj_list = ['stinky' , 'ugly', 'wild', 'moldy', 'violent', 'angry', 'sick', 'filthy'] #adjective list
 
-verb_list = ['stab', 'fear', 'cook', 'swat', 'fight', 'harass', 'explode', 'hit']
+verb_list = ['stab', 'fear', 'kick', 'melt', 'fight', 'harass', 'explode', 'hit']
 
-noun_list = ['toes', 'idiot', 'dog','cat','bathroom','butt','cockroach','poo']
+noun_list = ['toes', 'idiot', 'dog','cat','bathroom','butt','cockroach','failure']
 
 hero_list = ['Kenzie', 'Chelsea', 'Jasmine']
 
@@ -50,3 +54,6 @@ change_adjective()
 change_hero()
 
 print(" ".join(content_words))# It will not print original paragraph but the modified ones. Removes the list aspect and creates spaces between 
+"........."
+
+print("based on a true story.")
