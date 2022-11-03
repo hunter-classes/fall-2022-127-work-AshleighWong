@@ -16,24 +16,32 @@ def change_adjective():
     for i in range(len(content_words)):
       if content_words[i] == '<ADJECTIVE>':
         content_words[i] = random.choice(adj_list)
+      elif content_words[i] == '<ADJECTIVE>.':
+        content_words[i] = random.choice(adj_list) + "."
     return " ".join(content_words)
 
 def change_noun():
     for i in range(len(content_words)):
-      if content_words[i] == '<NOUN>' or '<NOUN>.':
+      if content_words[i] == '<NOUN>':
         content_words[i] = random.choice(noun_list)
+      elif content_words[i] == '<NOUN>.':
+        content_words[i] = random.choice(noun_list) + "."
     return " ".join(content_words)
 
 def change_verb():
     for i in range(len(content_words)):
-      if content_words[i] == '<VERB>' or '<VERB>.':
+      if content_words[i] == '<VERB>':
         content_words[i] = random.choice(verb_list)
+      elif content_words[i] == '<VERB>.':
+        content_words[i] = random.choice(verb_list) + "."
     return " ".join(content_words)
 
 def change_hero():
     for i in range(len(content_words)):
-      if content_words[i] == '<HERO>' or '<HERO>.':
+      if content_words[i] == '<HERO>':
         content_words[i] = random.choice(hero_list)
+      elif content_words[i] == '<HERO>.':
+        content_words[i] = random.choice(hero_list) + "."
     return " ".join(content_words)
 
 change_verb() 
