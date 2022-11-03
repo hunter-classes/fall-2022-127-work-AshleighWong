@@ -14,3 +14,17 @@ def CountFrequency(l,v):
   for i in l:
     v[i] = v.get(i, 0) + 1
   return v
+
+# fastmode assignment
+def fast_mode(dataset):
+  n =100
+  lists = [0]*n
+
+  for item in dataset:
+    lists[item] += 1
+
+  values = lists[0]
+  for num in lists:
+    if num > values:
+      values = lists.index(num)
+  return values
