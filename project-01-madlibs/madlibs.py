@@ -1,10 +1,9 @@
 """These are the extras I completed:
 1. Imported and read the file from another text file
 2. Dealt with capitalization at the beginning of the sentence
-3. Used repeated <HERO>
+3. Select a replacement randomly but then keep reusing that replacement.
 
 """
-
 import random 
 
 #open, read, and write file
@@ -61,6 +60,12 @@ change_noun() # calling all functions at the end will make it print whatever is 
 change_adjective()
 change_hero()
 
-print(" ".join(content_words))# It will not print original paragraph but the modified ones. Removes the list aspect and creates spaces between 
+#factoring in capitalization
+MLstory = " ".join(content_words) # Removes the list aspect and creates spaces between 
 
-print("based on a true story.")
+#helped by Julianne Agular 
+MLstory = MLstory.split('. ') #splits story into list after every period
+MLstory = [s.capitalize() for s in MLstory] #capitalizes the start of every element in list(the split)
+MLstory = '''.
+'''.join(MLstory) # joins the story and starts sentence on a new line
+print(MLstory)

@@ -26,8 +26,11 @@ def change_noun():
         content_words[i] = random.choice(noun_list)
       elif content_words[i] == '<NOUN>.':
         content_words[i] = random.choice(noun_list) + "."
+      if i.find(".") != -1: #find "." at the index and if it does not equal -1 it means there is a period. Helped by Mo Chaundrey 
+        next_word = content_words[i] + 1
+        content_words[i] + 1 = next_word.capitalize()       
     return " ".join(content_words)
-
+  
 def change_verb():
     for i in range(len(content_words)):
       if content_words[i] == '<VERB>':
@@ -49,4 +52,11 @@ change_noun()
 change_adjective()
 change_hero()
 
-print(" ".join(content_words))
+#capitalization
+story = " ".join(content_words) #joining the story 
+story = story.split('. ')
+story = [s.capitalize() for s in story]
+story = '''.
+'''.join(story)
+
+print(story)
