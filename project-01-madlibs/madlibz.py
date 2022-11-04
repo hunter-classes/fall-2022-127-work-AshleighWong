@@ -2,7 +2,6 @@
 1. Imported and read the file from another text file
 2. Dealt with capitalization at the beginning of the sentence
 3. Select a replacement randomly but then keep reusing that replacement.
-
 """
 import random 
 
@@ -13,11 +12,11 @@ content_words = content.split() #seperates charcters with white spaces between t
 
 adj_list = ['stinky' , 'ugly', 'wild', 'moldy', 'violent', 'evil', 'sick', 'filthy'] #adjective list
 
-verb_list = ['stab', 'fear', 'kick', 'melt', 'fight', 'snore', 'explode', 'laugh']
+verb_list = ['stab', '', 'kick', 'melt', 'fight', 'snore', 'explode', 'laugh']
 
-noun_list = ['toes', 'waste','dog','cat','toilet','butt','cockroach','failure']
+noun_list = ['toes', 'waste', 'dog','cat','bathroom','butt','cockroach','failure']
 
-hero_list = ['Kenzie', 'Chelsea', 'Jasmine']
+hero_list = ['Chelsea', 'Jasmine']
 
 #create function to locate and change adjectives
 def change_adjective():
@@ -46,28 +45,26 @@ def change_verb():
         content_words[i] = random.choice(verb_list) + "."
     return " ".join(content_words)
 
+#create function to locate and change the hero name.
+def change_hero():
+    for i in range(len(content_words)):
+      if content_words[i] == '<HERO>':
+        content_words[i] = random.choice(hero_list)
+      elif content_words[i] == '<HERO>.':
+        content_words[i] = random.choice(hero_list) + "."
+    return " ".join(content_words)
+
 change_verb() #calling all the functions in the end 
 change_noun() # calling all functions at the end will make it print whatever is returned --> " ".join(content_words)
 change_adjective()
+change_hero()
 
 #factoring in capitalization
+
 MLstory = " ".join(content_words) # Removes the list aspect and creates spaces between 
+sentences = MLstory.split('. ') # splits story into sentences
+for i in range(len(sentences)):
+  words = sentences[i].split(' ')
+  words[0] = words[0].capitalize()# capitalize first word
 
-#Helped by Julianne Agular(lines 57-58 and 64-65 and )
-MLstory = MLstory.split('. ') #splits story into list after every period
-MLstory = [s.capitalize() for s in MLstory] #capitalizes the start of every element in list(the split)
-
-MLstory = ". ".join(MLstory)
-MLstory = MLstory.split(' ')
-
-def change_hero(n):
-  hero_store = []
-  hero_store = hero_store + n 
-  for i in range(len(MLstory)):
-    if MLstory[i] == '<hero>':
-      MLstory[i] = random.choice(hero_list)
-    elif MLstory[i] == '<hero>.':
-      MLstory[i] = random.choice(hero_list)
-  return " ".join(MLstory)
-
-print(change_hero(hero_list))
+print(sentences)
