@@ -27,7 +27,7 @@ hero_list = ['Kenzie', 'Chelsea', 'Jasmine']
 #create function to locate and change adjectives
 def change_adjective():
     for i in range(len(content_words)): #getting length of the content words(the text file) and setting it to the range of the for loop.
-      if content_words[i] == '<ADJECTIVE>':# content_words[i] means the element at index 'i' of list. Finds location where string word in split file = <ADJECTIVE>
+      if content_words[i] == '<ADJECTIVE>':#content_words[i] means the element at index 'i' of list. Finds location where string word in split file = <ADJECTIVE>
         content_words[i] = random.choice(adj_list) #replaces the index position when the statement above is True with random element from adj_list.
       elif content_words[i] == '<ADJECTIVE>.':
         content_words[i] = random.choice(adj_list) + "."
