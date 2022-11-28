@@ -1,8 +1,8 @@
 #pirate translator -- solo project
 #Extras:
   #multiple translators (pirate, brooklyn, swedish chef)
-  #inserting random phrases 
-pirate_dic = {"Hey":"'Ay",
+  #capitalization 
+pirate_dic = {"hey" :"'ay",
               "friends":"mates",
               "friend" :"mate",
               "buddy":"matey",
@@ -14,7 +14,7 @@ pirate_dic = {"Hey":"'Ay",
               "talking":"blabberin'",
               "going":"goin'",
               "very":"mighty",
-              "Speaking":"Speakin'",
+              "speaking":"speakin'",
               "of":"o'",
               "you":"ye",
               "join":"board"}
@@ -25,9 +25,9 @@ brook_dic = {"isn't":"ain't",
              "talking":"tawhkin'",
              "going":"gonna",
              "thin":"tink",
-             "Speaking":"Speakin'",
+             "speaking":"speakin'",
              "later":"latuh",
-             "yuh":"yuh"}
+             "you":"yuh"}
              
 
 Schef_dic = {"fine":"feene-a",
@@ -47,7 +47,7 @@ Schef_dic = {"fine":"feene-a",
              'be':'be-a',
              'very':'fery',
              'fun':'fuon',
-             'Speaking':'Speekeng',
+             'speaking':'speekeng',
              'off':'ouff',
              'come':'cume-a',
              'join':'juin',
@@ -55,9 +55,8 @@ Schef_dic = {"fine":"feene-a",
              'you':'yuou',
              'would':'vuould',
              'like':'leeke-a',
-             'Catch':'Cetch',
-             'later':'leter',
-             'hey':'heey'}
+             'catch':'cetch',
+             'later':'leter'}
             
 
 
@@ -65,7 +64,7 @@ Schef_dic = {"fine":"feene-a",
 f = open("input.txt", "r")
 content = f.read()  #reads text file after opening 
 content_words = content.split() #seperates charcters with white spaces between them
-print(content_words)
+
 #pirate trasnlatior
 def pirate_trans():
   for i in range(len(content_words)): #goes through each element in the list content_words
@@ -89,14 +88,18 @@ def Schef_trans():
     word = content_words[i]
     if word in Schef_dic:
       content_words[i] = Schef_dic[content_words[i]]
+      if word in Schef_dic.capitalize:
+        content_words[i] = Schef_dic[content_words[i]].capitalize
   return ' '.join(content_words)
+  
 
-choice = input('What translator would you like to pick? A: pirate, brooklyn, or chef ')
-if choice == 'pirate':
-  print(pirate_trans())
-elif choice == 'brooklyn':
-  print(brook_trans())
-else:
+def option():
+  choice = input('What translator would you like to pick? A: pirate, brooklyn, or chef ')
+  if choice =='pirate':
+    print(pirate_trans())
+  elif choice =='brooklyn':
+    print(brook_trans())
+  else:
     print(Schef_trans() + " Bork! Bork! Bork!")
 
-#can also make it a function 
+option()
