@@ -1,7 +1,10 @@
 #pirate translator -- solo project
 #Extras:
   #multiple translators (pirate, brooklyn, swedish chef)
-  #inserting random phrases 
+  #inserting random phrases
+
+import random 
+
 pirate_dic = {"Hey":"'Ay",
               "friends":"mates",
               "friend" :"mate",
@@ -27,7 +30,7 @@ brook_dic = {"isn't":"ain't",
              "thin":"tink",
              "Speaking":"Speakin'",
              "later":"latuh",
-             "yuh":"yuh"}
+             "you":"yuh"}
              
 
 Schef_dic = {"fine":"feene-a",
@@ -58,20 +61,30 @@ Schef_dic = {"fine":"feene-a",
              'Catch':'Cetch',
              'later':'leter',
              'hey':'heey'}
-            
+
+
+
+#phrases for each translation--as lists
+pirate_P = ['Yo ho ho!', 'Shiver me timbers!', 'Briny Deep!', 'Avast Ye!']
+
+Schef_P = ['Bork! Bork! Bork!', 'Vurt da furk!', 'Cood Kookin!', 'Yoo betcha!']
+
+brook_P =['Put me on!', 'Its brick out here!', 'Oh dee!', 'You know the vibes!']
 
 
 #open text file as a read 
 f = open("input.txt", "r")
 content = f.read()  #reads text file after opening 
 content_words = content.split() #seperates charcters with white spaces between them
-print(content_words)
+
 #pirate trasnlatior
 def pirate_trans():
   for i in range(len(content_words)): #goes through each element in the list content_words
     word = content_words[i]
     if word in pirate_dic: #finding if the  value indexed at 'i' is in the pirate dictionary
       content_words[i] = pirate_dic[content_words[i]] # replaces the word from 
+    elif word == '<PHRASE>':
+      content_words[i] = random.choice(pirate_P) #randomizing the phrases extra
   return ' '.join(content_words)
 
 #brooklyn translator 
@@ -80,6 +93,8 @@ def brook_trans():
     word = content_words[i]
     if word in brook_dic:
       content_words[i] = brook_dic[content_words[i]]
+    elif word == '<PHRASE>':
+      content_words[i] = random.choice(brook_P)
   return ' '.join(content_words)
 
 
@@ -89,14 +104,18 @@ def Schef_trans():
     word = content_words[i]
     if word in Schef_dic:
       content_words[i] = Schef_dic[content_words[i]]
+    elif word == '<PHRASE>':
+      content_words[i] = random.choice(Schef_P)
   return ' '.join(content_words)
+  
 
-choice = input('What translator would you like to pick? A: pirate, brooklyn, or chef ')
-if choice == 'pirate':
-  print(pirate_trans())
-elif choice == 'brooklyn':
-  print(brook_trans())
-else:
+def option():
+  choice = input('What translator would you like to pick? A: pirate, brooklyn, or chef? ')
+  if choice =='pirate':
+    print(pirate_trans())
+  elif choice =='brooklyn':
+    print(brook_trans())
+  else:
     print(Schef_trans() + " Bork! Bork! Bork!")
 
-#can also make it a function 
+option()

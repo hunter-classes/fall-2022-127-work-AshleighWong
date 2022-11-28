@@ -1,6 +1,6 @@
 Hey friends. 
 It is a fine day isn't it. 
-My other buddy and I were talking about going to take a swim. 
+<PHRASE> My other buddy and I were talking about going to take a swim. 
 I think it will be a very fun day. 
 Speaking of come join us if you would like. 
-Catch you later.
+<PHRASE> Catch you later.
