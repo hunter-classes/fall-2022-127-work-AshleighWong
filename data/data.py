@@ -1,5 +1,5 @@
 #used Jupyter notebook from Anaconda
-#Imported pandas, matplotlib.pyplot, csv
+#Imported pandas, matplotlib.pyplot, csv, and seaborn
 #Extras: 
     #1. Data visualization in Histogram and Scatter Plot
     #2. Used multiple aspects of a single data source in your analysis
